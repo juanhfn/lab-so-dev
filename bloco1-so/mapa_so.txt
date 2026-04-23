@@ -7,23 +7,217 @@
 # explicando a função do diretório com suas próprias palavras.
 
 /proc
+
+[root@localhost ~]# ls /proc
+1   32  9          devices      iomem     mounts        swaps        vmstat
+10  4   90         device-tree  ioports   net           sys          zoneinfo
+11  42  buddyinfo  diskstats    irq       pagetypeinfo  sysvipc
+12  47  bus        driver       kallsyms  partitions    thread-self
+13  5   cgroups    execdomains  kmsg      sched_debug   timer_list
+14  6   cmdline    fb           loadavg   self          tty
+15  7   consoles   filesystems  locks     slabinfo      uptime
+2   78  cpuinfo    fs           meminfo   softirqs      version
+3   8   crypto     interrupts   misc      stat          vmallocinfo
+
   
 
 /proc/cpuinfo
   
+[root@localhost ~]# cat /proc/meminfo
+MemTotal:         186324 kB
+MemFree:          177424 kB
+MemAvailable:     176984 kB
+Buffers:               0 kB
+Cached:             3804 kB
+SwapCached:            0 kB
+Active:             3992 kB
+Inactive:           1080 kB
+Active(anon):       1268 kB
+Inactive(anon):        0 kB
+Active(file):       2724 kB
+Inactive(file):     1080 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          1304 kB
+Mapped:             2840 kB
+Shmem:                 0 kB
+Slab:               2980 kB
+SReclaimable:        468 kB
+SUnreclaim:         2512 kB
+KernelStack:         160 kB
+PageTables:           68 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       93160 kB
+Committed_AS:       2336 kB
+VmallocTotal:   67108863 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+
 
 /proc/meminfo
   
+[root@localhost ~]# cat /proc/meminfo
+MemTotal:         186324 kB
+MemFree:          177424 kB
+MemAvailable:     176984 kB
+Buffers:               0 kB
+Cached:             3804 kB
+SwapCached:            0 kB
+Active:             3992 kB
+Inactive:           1080 kB
+Active(anon):       1268 kB
+Inactive(anon):        0 kB
+Active(file):       2724 kB
+Inactive(file):     1080 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          1304 kB
+Mapped:             2840 kB
+Shmem:                 0 kB
+Slab:               2980 kB
+SReclaimable:        468 kB
+SUnreclaim:         2512 kB
+KernelStack:         160 kB
+PageTables:           68 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       93160 kB
+Committed_AS:       2336 kB
+VmallocTotal:   67108863 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+[root@localhost ~]# cat /proc/meminfo
+MemTotal:         186324 kB
+MemFree:          177460 kB
+MemAvailable:     177032 kB
+Buffers:               0 kB
+Cached:             3804 kB
+SwapCached:            0 kB
+Active:             3992 kB
+Inactive:           1080 kB
+Active(anon):       1268 kB
+Inactive(anon):        0 kB
+Active(file):       2724 kB
+Inactive(file):     1080 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          1304 kB
+Mapped:             2840 kB
+Shmem:                 0 kB
+Slab:               3004 kB
+SReclaimable:        492 kB
+SUnreclaim:         2512 kB
+KernelStack:         160 kB
+PageTables:           68 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       93160 kB
+Committed_AS:       2336 kB
+VmallocTotal:   67108863 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+
 
 /proc/uptime
   
 
+[root@localhost ~]# cat /proc/uptime
+1381.67 1377.93
+
+
 /bin
+
+[root@localhost ~]# ls /bin | wc -l
+2349
 
   
 /dev
-  
 
+  [root@localhost ~]# ls /dev
+console             ptycf  ptyr3  ptyv7  ptyzb   tty7   ttye1  ttys5  ttyw9
+cpu_dma_latency     ptyd0  ptyr4  ptyv8  ptyzc   tty8   ttye2  ttys6  ttywa
+full                ptyd1  ptyr5  ptyv9  ptyzd   tty9   ttye3  ttys7  ttywb
+hvc0                ptyd2  ptyr6  ptyva  ptyze   ttya0  ttye4  ttys8  ttywc
+hvc1                ptyd3  ptyr7  ptyvb  ptyzf   ttya1  ttye5  ttys9  ttywd
+hvc2                ptyd4  ptyr8  ptyvc  random  ttya2  ttye6  ttysa  ttywe
+hvc3                ptyd5  ptyr9  ptyvd  tty     ttya3  ttye7  ttysb  ttywf
+hvc4                ptyd6  ptyra  ptyve  tty0    ttya4  ttye8  ttysc  ttyx0
+hvc5                ptyd7  ptyrb  ptyvf  tty1    ttya5  ttye9  ttysd  ttyx1
+hvc6                ptyd8  ptyrc  ptyw0  tty10   ttya6  ttyea  ttyse  ttyx2
+hvc7                ptyd9  ptyrd  ptyw1  tty11   ttya7  ttyeb  ttysf  ttyx3
+kmem                ptyda  ptyre  ptyw2  tty12   ttya8  ttyec  ttyt0  ttyx4
+kmsg                ptydb  ptyrf  ptyw3  tty13   ttya9  ttyed  ttyt1  ttyx5
+mem                 ptydc  ptys0  ptyw4  tty14   ttyaa  ttyee  ttyt2  ttyx6
+memory_bandwidth    ptydd  ptys1  ptyw5  tty15   ttyab  ttyef  ttyt3  ttyx7
+network_latency     ptyde  ptys2  ptyw6  tty16   ttyac  ttyp0  ttyt4  ttyx8
+network_throughput  ptydf  ptys3  ptyw7  tty17   ttyad  ttyp1  ttyt5  ttyx9
+null                ptye0  ptys4  ptyw8  tty18   ttyae  ttyp2  ttyt6  ttyxa
+port                ptye1  ptys5  ptyw9  tty19   ttyaf  ttyp3  ttyt7  ttyxb
+ptmx                ptye2  ptys6  ptywa  tty2    ttyb0  ttyp4  ttyt8  ttyxc
+pts                 ptye3  ptys7  ptywb  tty20   ttyb1  ttyp5  ttyt9  ttyxd
+ptya0               ptye4  ptys8  ptywc  tty21   ttyb2  ttyp6  ttyta  ttyxe
+ptya1               ptye5  ptys9  ptywd  tty22   ttyb3  ttyp7  ttytb  ttyxf
+ptya2               ptye6  ptysa  ptywe  tty23   ttyb4  ttyp8  ttytc  ttyy0
+ptya3               ptye7  ptysb  ptywf  tty24   ttyb5  ttyp9  ttytd  ttyy1
+ptya4               ptye8  ptysc  ptyx0  tty25   ttyb6  ttypa  ttyte  ttyy2
+ptya5               ptye9  ptysd  ptyx1  tty26   ttyb7  ttypb  ttytf  ttyy3
+ptya6               ptyea  ptyse  ptyx2  tty27   ttyb8  ttypc  ttyu0  ttyy4
+ptya7               ptyeb  ptysf  ptyx3  tty28   ttyb9  ttypd  ttyu1  ttyy5
+ptya8               ptyec  ptyt0  ptyx4  tty29   ttyba  ttype  ttyu2  ttyy6
+ptya9               ptyed  ptyt1  ptyx5  tty3    ttybb  ttypf  ttyu3  ttyy7
+ptyaa               ptyee  ptyt2  ptyx6  tty30   ttybc  ttyq0  ttyu4  ttyy8
+ptyab               ptyef  ptyt3  ptyx7  tty31   ttybd  ttyq1  ttyu5  ttyy9
+ptyac               ptyp0  ptyt4  ptyx8  tty32   ttybe  ttyq2  ttyu6  ttyya
+ptyad               ptyp1  ptyt5  ptyx9  tty33   ttybf  ttyq3  ttyu7  ttyyb
+ptyae               ptyp2  ptyt6  ptyxa  tty34   ttyc0  ttyq4  ttyu8  ttyyc
+ptyaf               ptyp3  ptyt7  ptyxb  tty35   ttyc1  ttyq5  ttyu9  ttyyd
+ptyb0               ptyp4  ptyt8  ptyxc  tty36   ttyc2  ttyq6  ttyua  ttyye
+ptyb1               ptyp5  ptyt9  ptyxd  tty37   ttyc3  ttyq7  ttyub  ttyyf
+ptyb2               ptyp6  ptyta  ptyxe  tty38   ttyc4  ttyq8  ttyuc  ttyz0
+ptyb3               ptyp7  ptytb  ptyxf  tty39   ttyc5  ttyq9  ttyud  ttyz1
+ptyb4               ptyp8  ptytc  ptyy0  tty4    ttyc6  ttyqa  ttyue  ttyz2
+ptyb5               ptyp9  ptytd  ptyy1  tty40   ttyc7  ttyqb  ttyuf  ttyz3
+ptyb6               ptypa  ptyte  ptyy2  tty41   ttyc8  ttyqc  ttyv0  ttyz4
+ptyb7               ptypb  ptytf  ptyy3  tty42   ttyc9  ttyqd  ttyv1  ttyz5
+ptyb8               ptypc  ptyu0  ptyy4  tty43   ttyca  ttyqe  ttyv2  ttyz6
+ptyb9               ptypd  ptyu1  ptyy5  tty44   ttycb  ttyqf  ttyv3  ttyz7
+ptyba               ptype  ptyu2  ptyy6  tty45   ttycc  ttyr0  ttyv4  ttyz8
+ptybb               ptypf  ptyu3  ptyy7  tty46   ttycd  ttyr1  ttyv5  ttyz9
+ptybc               ptyq0  ptyu4  ptyy8  tty47   ttyce  ttyr2  ttyv6  ttyza
+ptybd               ptyq1  ptyu5  ptyy9  tty48   ttycf  ttyr3  ttyv7  ttyzb
+ptybe               ptyq2  ptyu6  ptyya  tty49   ttyd0  ttyr4  ttyv8  ttyzc
+ptybf               ptyq3  ptyu7  ptyyb  tty5    ttyd1  ttyr5  ttyv9  ttyzd
+ptyc0               ptyq4  ptyu8  ptyyc  tty50   ttyd2  ttyr6  ttyva  ttyze
+ptyc1               ptyq5  ptyu9  ptyyd  tty51   ttyd3  ttyr7  ttyvb  ttyzf
+ptyc2               ptyq6  ptyua  ptyye  tty52   ttyd4  ttyr8  ttyvc  urandom
+ptyc3               ptyq7  ptyub  ptyyf  tty53   ttyd5  ttyr9  ttyvd  vcs
+ptyc4               ptyq8  ptyuc  ptyz0  tty54   ttyd6  ttyra  ttyve  vcs1
+ptyc5               ptyq9  ptyud  ptyz1  tty55   ttyd7  ttyrb  ttyvf  vcsa
+ptyc6               ptyqa  ptyue  ptyz2  tty56   ttyd8  ttyrc  ttyw0  vcsa1
+ptyc7               ptyqb  ptyuf  ptyz3  tty57   ttyd9  ttyrd  ttyw1  vga_arbiter
+ptyc8               ptyqc  ptyv0  ptyz4  tty58   ttyda  ttyre  ttyw2  vport0p0
+ptyc9               ptyqd  ptyv1  ptyz5  tty59   ttydb  ttyrf  ttyw3  zero
+ptyca               ptyqe  ptyv2  ptyz6  tty6    ttydc  ttys0  ttyw4
+ptycb               ptyqf  ptyv3  ptyz7  tty60   ttydd  ttys1  ttyw5
+ptycc               ptyr0  ptyv4  ptyz8  tty61   ttyde  ttys2  ttyw6
+ptycd               ptyr1  ptyv5  ptyz9  tty62   ttydf  ttys3  ttyw7
+ptyce               ptyr2  ptyv6  ptyza  tty63   ttye0  ttys4  ttyw8
 /etc
   
 
@@ -33,4 +227,4 @@
 # e que rotinas de dispositivo traduziam comandos.
 # Em qual diretório do Linux você reconhece essa função?
 
-Resposta:
+Resposta:no diretório /dev pois ele que controla as entradas e as saídas de dados da máquina 
