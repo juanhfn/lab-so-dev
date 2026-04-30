@@ -6,7 +6,7 @@
 # Cole abaixo a saída de cada comando e anote o que observou.
 
 echo $$
-  PID do shell: 
+  PID do shell: 47
 
 cat /proc/[PID]/status   (substitua [PID] pelo número real)
   PID:
