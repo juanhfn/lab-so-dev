@@ -10,52 +10,60 @@ echo $$
 
 cat /proc/[PID]/status   (substitua [PID] pelo número real)
   PID:47
-  PPID (processo pai):2
+  PPID (processo pai):1
   State:S (sleeping)
 
 cat /proc/[PID]/stat (campos relevantes)
-  Campo 2 — nome do executável:(kworker/0:0H)
-  Campo 3 — estado: I
-  Campos 14 e 15 — utime / stime: 0 0
+  Campo 2 — nome do executável:(sh)
+  Campo 3 — estado: S
+  Campos 14 e 15 —  47 42
 
 ps aux (primeiras linhas)
-  USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root         1  0.1  1.3   3136  2516 ?        S    10:54   0:00 /bin/sh /sbin/i
-root         2  0.0  0.0      0     0 ?        S    10:54   0:00 [kthreadd]
-root         3  0.0  0.0      0     0 ?        I    10:54   0:00 [kworker/0:0]
-root         4  0.0  0.0      0     0 ?        I<   10:54   0:00 [kworker/0:0H]
-root         5  0.0  0.0      0     0 ?        I    10:54   0:00 [kworker/u2:0]
-root         6  0.0  0.0      0     0 ?        I<   10:54   0:00 [mm_percpu_wq]
-root         7  0.0  0.0      0     0 ?        S    10:54   0:00 [ksoftirqd/0]
-root         8  0.0  0.0      0     0 ?        S    10:54   0:00 [kdevtmpfs]
-root         9  0.0  0.0      0     0 ?        I<   10:54   0:00 [netns]
-root        10  0.0  0.0      0     0 ?        S    10:54   0:00 [oom_reaper]
-root        11  0.0  0.0      0     0 ?        I<   10:54   0:00 [writeback]
-root        12  0.0  0.0      0     0 ?        I<   10:54   0:00 [crypto]
-root        13  0.0  0.0      0     0 ?        I<   10:54   0:00 [kblockd]
-root        14  0.0  0.0      0     0 ?        S    10:54   0:00 [kswapd0]
-root        15  0.0  0.0      0     0 ?        I    10:54   0:00 [kworker/0:1]
-root        32  0.0  0.0      0     0 ?        S    10:54   0:00 [khvcd]
-root        42  0.0  0.7   1944  1472 ?        Ss   10:54   0:00 dhcpcd
-root        47  0.1  1.5   6204  2948 hvc0     Ss   10:54   0:00 sh -l
-root        99  0.0  0.0      0     0 ?        I    10:54   0:00 [kworker/u2:1]
-root       103  2.5  1.4   8180  2740 hvc0     R+   11:00   0:00 ps aux
 
+  USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.7  1.3   3136  2516 ?        S    18:59   0:01 /bin/sh /sbin/init
+root         2  0.0  0.0      0     0 ?        S    18:59   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I    18:59   0:00 [kworker/0:0]
+root         4  0.0  0.0      0     0 ?        I<   18:59   0:00 [kworker/0:0H]
+root         5  0.0  0.0      0     0 ?        I    18:59   0:00 [kworker/u2:0]
+root         6  0.0  0.0      0     0 ?        I<   18:59   0:00 [mm_percpu_wq]
+root         7  0.0  0.0      0     0 ?        S    18:59   0:00 [ksoftirqd/0]
+root         8  0.0  0.0      0     0 ?        S    18:59   0:00 [kdevtmpfs]
+root         9  0.0  0.0      0     0 ?        I<   18:59   0:00 [netns]
+root        10  0.0  0.0      0     0 ?        S    18:59   0:00 [oom_reaper]
+root        11  0.0  0.0      0     0 ?        I<   18:59   0:00 [writeback]
+root        12  0.0  0.0      0     0 ?        I<   18:59   0:00 [crypto]
+root        13  0.0  0.0      0     0 ?        I<   18:59   0:00 [kblockd]
+root        14  0.0  0.0      0     0 ?        S    18:59   0:00 [kswapd0]
+root        15  0.0  0.0      0     0 ?        I    18:59   0:00 [kworker/0:1]
+root        32  0.0  0.0      0     0 ?        S    18:59   0:00 [khvcd]
+root        42  0.0  0.7   1944  1472 ?        Ss   18:59   0:00 dhcpcd
+root        47  0.3  1.5   6204  2944 hvc0     Ss   18:59   0:00 sh -l
+root        55  0.0  0.0      0     0 ?        I    18:59   0:00 [kworker/u2:1]
+root       102 16.5  1.4   8180  2740 hvc0     R+   19:03   0:00 ps aux
 
 # PARTE B — Processo filho
 # Cole a saída dos comandos e responda:
 
 sleep 5m &
-  PID do filho: 123
+  PID do filho: 103
 
 cat /proc/[FILHO]/status | grep -E "Pid|PPid|State"
-  [cole aqui]
+  State:  S (sleeping)
+Pid:    103
+PPid:   47
+TracerPid:      0
 
 ps -o pid,ppid,stat,cmd (antes do kill)
-  [cole aqui]
+   PID  PPID STAT CMD
+   47     1 Ss   sh -l
+  103    47 S    sleep 5m
+  106    47 R+   ps -o pid,ppid,stat,cmd
 
 ps -o pid,ppid,stat,cmd (depois do kill)
-  [cole aqui]
+   PID  PPID STAT CMD
+   47     1 Ss   sh -l
+  126    47 R+   ps -o
 
 
 # PARTE C — Questões de síntese
@@ -65,7 +73,7 @@ ps -o pid,ppid,stat,cmd (depois do kill)
 #    O que esse encadeamento sugere sobre como os processos sao
 #    criados no Linux?
 
-Resposta 1:
+Resposta 1: Sugere que os processos são ciclos onde o pai cria um processo que vira o filho e se o filho cria outro processo ele vira um pai , notamos que é um ciclo onde um processo cria o outro
 
 
 # 2. O arquivo /proc/<PID>/status mostra o campo State com uma letra
@@ -73,4 +81,8 @@ Resposta 1:
 #    o que aconteceu com o processo filho? O que isso te faz pensar  
 #    sobre a vida de um processo?
 
-Resposta 2:
+
+
+
+
+Resposta 2: o processo filho morre. Me fez pensar que a vida dele depende do processo pai pois ele que define o que vai acontecer com o filho e com os outros processos que vieram desse filho.
