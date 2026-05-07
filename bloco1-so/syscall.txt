@@ -39,7 +39,7 @@ Modo usuario -> kernel via write()
 #    Com base no que o strace revelou, explique com suas palavras como um programa
 #    de usuário consegue fazer I/O sem executar instruções privilegiadas diretamente.
 
-Resposta 1:
+Resposta 1:ele solicita que o kernel faça isso para ele
 
 
 # 2. Na apresentação sobre a genealogia do software, vimos que os programas de canal
@@ -47,4 +47,4 @@ Resposta 1:
 #    dispositivos, sem intervenção direta da CPU principal. Qual elemento do sistema 
 #    operacional moderno herda esse papel? 
 
-Resposta 2:
+Resposta 2: o DMA (Direct Memory Access) que faz esse papel 
