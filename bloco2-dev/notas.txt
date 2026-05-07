@@ -13,8 +13,6 @@ Observação: ele expande os #include e quaisquer macros e salva em soma.i
 # Cole aqui 5 a 10 linhas de soma.s que você considera mais
 # interessantes.
 
-
-
 Trecho de soma.s:
 
 main:
@@ -29,14 +27,14 @@ main:
 # FASE 3 — Código objeto (gcc -c)
 # Cole a saída de: file soma.o
 
-file soma.o:
+file soma.o::soma.o: ELF 64-bit LSB relocatable, UCB RISC-V, version 1 (SYSV), nsot stripped
 
-# Cole a saída de: nm soma.o :soma.o: ELF 64-bit LSB relocatable, UCB RISC-V, version 1 (SYSV), not stripped
-
-nm soma.o:  0000000000000000 r .LC0
+# Cole a saída de: nm soma.o :nm soma.o:  0000000000000000 r .LC0
 0000000000000028 T main
                  U printf
 0000000000000000 T soma
+
+
 
 # Quais símbolos aparecem? O que significa o marcador "U" ao lado
 # de printf? T e U.  que printf não está definido
