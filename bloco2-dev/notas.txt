@@ -37,7 +37,7 @@ file soma.o::soma.o: ELF 64-bit LSB relocatable, UCB RISC-V, version 1 (SYSV), n
 
 
 # Quais símbolos aparecem? O que significa o marcador "U" ao lado
-# de printf? T e U.  que printf não está definido
+# de printf? T e U. ele mostra que printf está ou não está definido
 
 Observação sobre nm: ele mostra o que está definido e o que não está
 
